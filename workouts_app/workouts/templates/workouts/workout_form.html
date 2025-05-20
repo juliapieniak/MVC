@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+- Details
+{% endblock %}
+{% block content %}
+<h2>{{ action }} Workout</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="actions">
+        <button class="btn-primary" type="submit">{{ action }}</button>
+        <a class="btn-ghost" href="{% url 'workout_list' %}">Cancel</a>
+    </div>
+</form>
+{% endblock %}
