@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+- List
+{% endblock %}
+{% block content %}
+<div class="subtitle">
+    <h2>Workouts List</h2>
+    <a href="{% url 'workout_add' %}" class="btn-primary">Add New Workout</a>
+</div>
+<ul>
+    {% for workout in workouts %}
+    <li>
+        <div class="list-item-content">
+            <div class="details">
+                {{ workout.name }} ({{ workout.get_workout_type_display }}, {{ workout.get_intensity_display }})
+            </div>
+            <div class="actions">
+                <a href="{% url 'workout_edit' workout.id %}" class="btn-primary">Edit</a>
+                <a href="{% url 'workout_delete' workout.id %}" class="btn-danger">Delete</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

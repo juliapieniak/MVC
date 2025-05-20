@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+<header>
+    <h1 class="m-0 d-flex">
+        <a href="/workouts">
+            Workouts App
+        </a>
+    </h1>
+</header>
+
+<main>
+    <div class="content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+
+</body>
+</html>
